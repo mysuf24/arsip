@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"arsip/config"
+	"arsip/routes"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Hello, Arsip!")
+	config.InitDB()
+	config.InitRedis()
+
+	r := gin.Default()
+	routes.SetupRoutes(r)
+
+	r.Run(":8080")
 }
