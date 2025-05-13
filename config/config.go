@@ -13,7 +13,7 @@ var DB *gorm.DB
 var RedisClient *redis.Client
 
 func InitDB() {
-	dsn := "host=localhost user=postgres password=12345 dbname=arsipdb port=5432 sslmode=disable"
+	dsn := "host=localhost user=postgres password=123 dbname=arsipdb port=5432 sslmode=disable"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
